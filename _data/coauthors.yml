@@ -1,34 +1,29 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+"santato":
+  - firstname: ["Giacomo", "G."]
+    url: https://giacomosantato.github.io/personal-website
 
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"paracucchi":
+  - firstname: ["Eugenio", "E."]
+    url: https://cispa.de/en/people/c01eupa
 
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"dottling":
+  - firstname: ["Nico", "N."]
+    url: https://sites.google.com/site/nicodoettling
 
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"hanzlik":
+  - firstname: ["Lucjan", "L."]
+    url: https://lucjanhanzlik.github.io/
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"branco":
+  - firstname: ["Pedro", "P."]
+    url: https://sites.google.com/view/pmbranco
 
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
+"orsini":
+  - firstname: ["Emmanuela", "E.", "Manuela", "M."]
+    url: https://cseao.github.io
 
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
+"srinivasan":
+  - firstname: ["Akshayaram", "A."]
+    url: https://www.cs.toronto.edu/~akshayaram
 
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
-
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+    

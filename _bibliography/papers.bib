@@ -1,115 +1,124 @@
 ---
+My BiB papers
+
+selected          = {true},
+abbr              = {ePrint},
+preview           = {brownian-motion.gif},
+additional_info   = {Additional description},
+annotation        = {Author list annotation},
+
+bibtex_show       = {true},
+html              = {},
+pdf               = {},
+slides            = {},
+video             = {},
+blog              = {},
+
+altmetric         = {false},
+dimensions        = {false},
+inspirehep_id     = {false},
+google_scholar_id = {},
 ---
 
-@string{aps = {American Physical Society,}}
 
-@book{einstein1920relativity,
-  title     = {Relativity: the Special and General Theory},
-  author    = {Einstein, Albert},
-  year      = {1920},
-  publisher = {Methuen & Co Ltd},
-  html      = {relativity.html}
-}
+@misc{cryptoeprint:2026/285,
+  author = {Giacomo Santato and Riccardo Zanotto},
+  title = {How (not) to Switch {FHE} Schemes: Framework and Attacks in the {IND}-{CPA}-D Model},
+  howpublished = {Cryptology {ePrint} Archive, Paper 2026/285},
+  year = {2026},
+  abstract={In this paper, we study the IND-CPA-D security of FHE schemes when combined through scheme switching. We introduce a formal framework that captures security in this setting and provide a rigorous analysis of different constructions. Within this framework, we identify sufficient conditions for the switching algorithm under which the combined schemes achieve IND-CPA-D security, assuming the individual schemes are IND-CPA-D-secure.
+  We then focus on the specific case of scheme switching from CKKS to TFHE. We analyze how existing switching algorithms designed for vanilla CKKS can be modified to preserve IND-CPA-D security. We demonstrate an attack against the IND-CPA-D security of the PEGASUS construction [LHHMQ21] and we implement a proof-of-concept of this attack against the CKKS-to-FHEW switching mechanism in the OpenFHE library. Finally, we present a generic transformation that converts a vanilla CKKS-based switch into an IND-CPA-D-secure one.},
+  url = {https://eprint.iacr.org/2026/285},
 
-@book{einstein1956investigations,
-  bibtex_show = {true},
-  title       = {Investigations on the Theory of the Brownian Movement},
-  author      = {Einstein, Albert},
-  year        = {1956},
-  publisher   = {Courier Corporation},
-  preview     = {brownian-motion.gif}
-}
-
-@article{einstein1950meaning,
-  abbr        = {AJP},
-  bibtex_show = {true},
-  title       = {The meaning of relativity},
-  author      = {Einstein, Albert and Taub, AH},
-  journal     = {American Journal of Physics},
-  volume      = {18},
-  number      = {6},
-  pages       = {403--404},
-  year        = {1950},
-  publisher   = {American Association of Physics Teachers}
-}
-
-@article{PhysRev.47.777,
-  abbr              = {PhysRev},
-  title             = {Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author            = {Einstein*†, A. and Podolsky*, B. and Rosen*, N.},
-  abstract          = {In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal           = {Phys. Rev.},
-  location          = {New Jersey},
-  volume            = {47},
-  issue             = {10},
-  pages             = {777--780},
-  numpages          = {0},
-  year              = {1935},
-  month             = {May},
-  publisher         = aps,
-  doi               = {10.1103/PhysRev.47.777},
-  url               = {https://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html              = {https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf               = {example_pdf.pdf},
-  altmetric         = {248277},
-  dimensions        = {true},
-  google_scholar_id = {qyhmnyLat1gC},
-  video             = {https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ},
-  additional_info   = {. *More Information* can be [found here](https://github.com/alshedivat/al-folio/)},
-  annotation        = {* Example use of superscripts<br>† Albert Einstein},
   selected          = {true},
-  inspirehep_id     = {3255}
+  abbr              = {ePrint},
+  preview           = {brownian-motion.gif},
+
+  bibtex_show       = {true},
+  html              = {https://eprint.iacr.org/2026/285},
+  pdf               = {https://eprint.iacr.org/2026/285.pdf},
 }
 
-@article{einstein1905molekularkinetischen,
-  title     = {{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author    = {Einstein, A.},
-  journal   = {Annalen der physik},
-  volume    = {322},
-  number    = {8},
-  pages     = {549--560},
-  year      = {1905},
-  publisher = {Wiley Online Library}
+@InProceedings{10.1007/978-3-031-91124-8_13,
+  author="Hanzlik, Lucjan
+  and Paracucchi, Eugenio
+  and Zanotto, Riccardo",
+  editor="Fehr, Serge
+  and Fouque, Pierre-Alain",
+  title="Non-interactive Blind Signatures from RSA Assumption and More",
+  booktitle="Advances in Cryptology -- EUROCRYPT 2025",
+  year="2025",
+  publisher="Springer Nature Switzerland",
+  address="Cham",
+  pages="365--394",
+  abstract="Blind signatures have received increased attention from researchers and practitioners. They allow users to obtain a signature under a message without revealing it to the signer. One of the most popular applications of blind signatures is to use them as one-time tokens, where the issuing is not linkable to the redeeming phase, and the signature under a random identifier forms a valid token. This concept is the backbone of the Privacy Pass system, which uses it to identify honest but anonymous users and protect content delivery networks from botnets.",
+  isbn="978-3-031-91124-8",
+  doi="10.1007/978-3-031-91124-8_13",
+
+  selected          = {true},
+  abbr              = {EUROCRYPT},
+  preview           = {brownian-motion.gif},
+
+  bibtex_show       = {true},
+  html              = {https://link.springer.com/chapter/10.1007/978-3-031-91124-8_13},
+  pdf               = {https://eprint.iacr.org/2025/2076.pdf},
+  slides            = {https://iacr.org/submit/files/slides/2025/eurocrypt/eurocrypt2025/133/133_slides.pdf},
+  video             = {https://youtu.be/0DoLLBDi0k4},
+
+  google_scholar_id = {qjMakFHDy7sC},
 }
 
-@article{einstein1905movement,
-  abbr    = {Ann. Phys.},
-  title   = {Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author  = {Einstein, A.},
-  journal = {Ann. Phys.},
-  volume  = {17},
-  pages   = {549--560},
-  year    = {1905}
+@InProceedings{10.1007/978-3-031-57725-3_12,
+  author="Branco, Pedro
+  and D{\"o}ttling, Nico
+  and Srinivasan, Akshayaram
+  and Zanotto, Riccardo",
+  editor="Tang, Qiang
+  and Teague, Vanessa",
+  title="Rate-1 Fully Local Somewhere Extractable Hashing from DDH",
+  booktitle="Public-Key Cryptography -- PKC 2024",
+  year="2024",
+  publisher="Springer Nature Switzerland",
+  address="Cham",
+  pages="356--386",
+  abstract="Somewhere statistically binding (SSB) hashing allows us to sample a special hashing key such that the digest statistically binds the input at m secret locations. This hash function is said to be somewhere extractable (SE) if there is an additional trapdoor that allows the extraction of the input bits at the m locations from the digest.",
+  isbn="978-3-031-57725-3",
+  doi="10.1007/978-3-031-57725-3_12",
+
+  selected          = {true},
+  abbr              = {PKC},
+  preview           = {brownian-motion.gif},
+
+  bibtex_show       = {true},
+  html              = {https://link.springer.com/chapter/10.1007/978-3-031-57725-3_12},
+  pdf               = {https://eprint.iacr.org/2024/216.pdf},
+  slides            = {https://iacr.org/submit/files/slides/2024/pkc/pkc2024/168/slides.pdf},
+  video             = {https://youtu.be/e8KOVAwRlJY?si=2OipLFM9qXKvxX3Z},
+
+  google_scholar_id = {u-x6o8ySG0sC},
 }
 
-@article{einstein1905electrodynamics,
-  title  = {On the electrodynamics of moving bodies},
-  author = {Einstein, A.},
-  year   = {1905}
+@article{10.62056/a39qgy4e-,
+  author={Emmanuela Orsini and Riccardo Zanotto},
+  title={Simple Two-Message {OT} in the Explicit Isogeny Model},
+  volume={1},
+  number={1},
+  year={2024},
+  date={2024-04-09},
+  issn={3006-5496},
+  doi={10.62056/a39qgy4e-},
+  journal={{IACR} Communications in Cryptology},
+  publisher={International Association for Cryptologic Research},
+  abstract={In this work we study algebraic and generic models for group actions, and extend them to the universal composability (UC) framework of Canetti (FOCS 2001). We revisit the constructions of Duman et al. (PKC 2023) integrating the type-safe model by Zhandry (Crypto 2022), adapted to the group action setting, and formally define an algebraic action model (AAM). This model restricts the power of the adversary in a similar fashion to the algebraic group model (AGM). By imposing algebraic behaviour to the adversary and environment of the UC framework, we construct the UC-AAM. Finally, we instantiate UC-AAM with isogeny-based assumptions, in particular the CSIDH action with twists, obtaining the explicit isogeny model, UC-EI; we observe that, under certain assumptions, this model is "closer" to standard UC than the UC-AGM, even though there still exists an important separation. We demonstrate the utility of our definitions by proving UC-EI security for the passive-secure oblivious transfer protocol described by Lai et al. (Eurocrypt 2021), hence providing the first concretely efficient two-message isogeny-based OT protocol in the random oracle model against malicious adversaries.},
+
+  selected          = {true},
+  abbr              = {CiC},
+  preview           = {brownian-motion.gif},
+
+  bibtex_show       = {true},
+  html              = {https://cic.iacr.org/p/1/1/15},
+  pdf               = {https://cic.iacr.org/p/1/1/15/pdf},
+
+  google_scholar_id = {9yKSN-GCB0IC},
 }
 
-@article{einstein1905photoelectriceffect,
-  bibtex_show = {true},
-  abbr        = {Ann. Phys.},
-  title       = {{{\"U}ber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}},
-  author      = {Albert Einstein},
-  abstract    = {This is the abstract text.},
-  journal     = {Ann. Phys.},
-  volume      = {322},
-  number      = {6},
-  pages       = {132--148},
-  year        = {1905},
-  doi         = {10.1002/andp.19053220607},
-  award       = {Albert Einstein receveid the **Nobel Prize in Physics** 1921 *for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect*},
-  award_name  = {Nobel Prize}
-}
-
-@book{przibram1967letters,
-  bibtex_show = {true},
-  title       = {Letters on wave mechanics},
-  author      = {Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year        = {1967},
-  publisher   = {Vision},
-  preview     = {wave-mechanics.gif},
-  abbr        = {Vision}
-}
