@@ -33,7 +33,6 @@ My research topics are very broad; given my formation as a mathematician I am in
 
 I am also really passionate about doing sports, and in general anything related to mountains :D
 
-
 #### My background
 
 I hold a Bachelor (2018) and a Master (2021) degree in Mathematics, obtained at [Università di Pisa](https://www.unipi.it/en/) and [Scuola Normale Superiore](https://www.sns.it/en). During my Master's thesis I worked with Emmanuela on isogeny-based Oblivious Transfer protocols. Going back to my high school days, I have two gold medals at the national mathematical olympiads, and a [participation](https://www.imo-official.org/participant_r.aspx?id=26099) at the IMO.
