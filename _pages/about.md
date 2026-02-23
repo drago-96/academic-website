@@ -8,8 +8,8 @@ profile:
   align: right
   image: propic_CISPA.jpg
   image_circular: true # crops the image to make it circular
-  # more_info: >
-  #   <p>555 your office number</p>
+  more_info: >
+    riccardo [dot] zanotto [at] cispa [dot] de
   #   <p>123 your address street</p>
   #   <p>Your City, State 12345</p>
 
@@ -27,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi, I'm Riccardo, and I am currently pusuing a PhD in cryptography at CISPA, supervised by [Nico Döttling](https://sites.google.com/site/nicodoettling/).
+Hi, I'm Riccardo, and I am currently pursuing a PhD in cryptography at CISPA, supervised by [Nico Döttling](https://sites.google.com/site/nicodoettling/).
 
 My research topics are very broad; given my formation as a mathematician I am interested on isogenies and abstract constructions, but my passion is cryptanalysis and in general breaking stuff!
 
