@@ -7,13 +7,13 @@ first_name: Riccardo
 middle_name:
 last_name: Zanotto
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Homepage of Riccardo Zanotto. Here you can find my blog, research, projects and more.
+  Homepage of Riccardo Zanotto, cryptography researcher. Here you can find my blog, research, projects and more.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 # Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 # contact_note: >
 #   You can even add a little note about which of these is the best way to reach you.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website, zanotto, drago, cryptography # add your own keywords or leave empty
+keywords: jekyll, jekyll-theme, academic-website, portfolio-website, zanotto, drago, cryptography, cryptanalysis # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -67,8 +67,8 @@ max_width: 930px
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
 # see https://schema.org/docs/faq.html for more information
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
-serve_schema_org: false # Include Schema.org in the HTML head
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
+serve_schema_org: true # Include Schema.org in the HTML head
 og_image: # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
