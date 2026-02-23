@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://drago-96.github.io/academic-website/sitemap.xml
+Sitemap: https://zanot.to/sitemap.xml
