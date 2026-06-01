@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -eu
+
+echo "Running Prettier check..."
+
+npx prettier . --check && exit 0
+
+echo
+echo "Prettier found formatting changes. Applying Prettier so you can review the required diff..."
+npx prettier . --write
+
+echo
+echo "Prettier changes to review and stage:"
+git --no-pager diff -- . ':(exclude)package-lock.json' ':(exclude)package.json'
+git status --short
+
+echo
+echo "Commit aborted. Review the diff above, stage the formatted files, and commit again."
+exit 1
