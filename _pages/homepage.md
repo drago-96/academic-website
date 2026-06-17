@@ -2,7 +2,7 @@
 layout: about
 title: home
 permalink: /
-subtitle: Cryptography PhD student @<a href="https://cispa.de/en" target="_blank">CISPA</a>. CTF player @<a href="https://x.com/aboutblankets" target="_blank">about:blankets</a>.
+subtitle: Cryptography PhD student. CTF player.
 
 profile:
   align: right
@@ -25,7 +25,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi, I'm Riccardo, and I am currently pursuing a PhD in cryptography at [CISPA](https://cispa.de/en), supervised by [Nico Döttling](https://sites.google.com/site/nicodoettling/).
+Hi, I'm Riccardo, and I am currently pursuing a PhD in cryptography at [CISPA](https://cispa.de/en) and [Saarland University](https://www.graduateschool-computerscience.de/), supervised by [Nico Döttling](https://sites.google.com/site/nicodoettling/).
 
 My research interests are broad, from isogenies and constructions of advanced primitives to cryptanalysis of assumptions and real-world protocols.
 Beyond research, I am a CTF player, and generally interested in how computer systems work and how they break.
