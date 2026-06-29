@@ -1,1 +1,15 @@
-{}
+"ePrint":
+  url: https://eprint.iacr.org
+  color: "#6B7280"
+
+"PKC":
+  url: https://www.iacr.org/meetings/pkc/
+  color: "#2563EB"
+
+"EUROCRYPT":
+  url: https://www.iacr.org/meetings/eurocrypt/
+  color: "#7C3AED"
+
+"CiC":
+  url: https://cic.iacr.org/
+  color: "#0F766E"

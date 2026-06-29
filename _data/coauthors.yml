@@ -1,1 +1,30 @@
-{}
+"santato":
+  - firstname: ["Giacomo", "G."]
+    url: https://giacomosantato.github.io/personal-website
+
+"paracucchi":
+  - firstname: ["Eugenio", "E."]
+    url: https://cispa.de/en/people/c01eupa
+
+"dottling":
+  - firstname: ["Nico", "N."]
+    url: https://sites.google.com/site/nicodoettling
+
+"hanzlik":
+  - firstname: ["Lucjan", "L."]
+    url: https://lucjanhanzlik.github.io/
+
+"branco":
+  - firstname: ["Pedro", "P."]
+    url: https://sites.google.com/view/pmbranco
+
+"orsini":
+  - firstname: ["Emmanuela", "E.", "Manuela", "M."]
+    url: https://cseao.github.io
+
+"srinivasan":
+  - firstname: ["Akshayaram", "A."]
+    url: https://www.cs.toronto.edu/~akshayaram
+
+"mohamed":
+  - firstname: ["Manar", "M."]

@@ -1,2 +1,130 @@
 ---
 ---
+@misc{cryptoeprint:2026/1067,
+      author = {Nico Döttling and Manar Mohamed and Riccardo Zanotto},
+      title = {{GATOR}: Group Action {AdapTOR} Signatures via {MPC}-in-the-Head},
+      howpublished = {Cryptology {ePrint} Archive, Paper 2026/1067},
+      year = {2026},
+      abstract = {Adaptor signatures are a foundational fairness primitive for blockchain applications. They enhance blockchain functionality by enabling applications such as atomic swaps, payment channels, and other fair-exchange protocols. At a high level, they allow a buyer to produce a pre-signature tied to a public statement, which a seller holding a corresponding witness can adapt into a valid signature. Once this signature is posted on-chain, the seller obtains payment, while the buyer can extract the witness from the finalized signature.
+      Existing practical adaptor signature constructions are predominantly tied to discrete-logarithm-based signatures, such as ECDSA and Schnorr, reflecting their widespread use in current blockchain deployments. However, the threat of Shor's algorithm and the broader transition toward post-quantum cryptography raise the question of whether adaptor functionality can also be realized efficiently for post-quantum signature schemes.
+      In this work, we answer this question for a broad class of signatures based on cryptographic group actions. Building on efficient MPC-in-the-Head-style group-action signatures, we obtain adaptor functionality through small modifications, yielding a general framework for adaptor signatures from arbitrary group actions.
+      In particular, our construction supports selling group-action discrete logarithms, which in certain parameter regimes correspond to the secret keys of the underlying signature scheme.
+      We further discuss concrete instantiations from several group-action families, including those underlying schemes such as CSI-FiSh, LESS, MEDS, and ALTEQ, and present a modular proof-of-concept implementation. We obtain a ~25kB pre-signature with ~100ms pre-signing time for LESS, MEDS and ALTEQ, while a ~4kB pre-signature with ~3.6s pre-signing time for CSI-FiSh.},
+      url = {https://eprint.iacr.org/2026/1067},
+
+      selected          = {false},
+      abbr              = {ePrint},
+      preview           = {GATOR_cheat.png},
+
+      bibtex_show       = {true},
+      html              = {https://eprint.iacr.org/2026/1067},
+      pdf               = {https://eprint.iacr.org/2026/1067.pdf},
+      code              = {https://github.com/drago-96/GATOR},
+
+      google_scholar_id = {IjCSPb-OGe4C},
+}
+
+
+@misc{cryptoeprint:2026/285,
+  author = {Giacomo Santato and Riccardo Zanotto},
+  title = {How (not) to Switch {FHE} Schemes: Framework and Attacks in the {IND}-{CPA}-D Model},
+  howpublished = {Cryptology {ePrint} Archive, Paper 2026/285},
+  year = {2026},
+  abstract = {In this paper, we study the IND-CPA-D security of FHE schemes when combined through scheme switching. We introduce a formal framework that captures security in this setting and provide a rigorous analysis of different constructions. Within this framework, we identify sufficient conditions for the switching algorithm under which the combined schemes achieve IND-CPA-D security, assuming the individual schemes are IND-CPA-D-secure.
+  We then focus on the specific case of scheme switching from CKKS to TFHE. We analyze how existing switching algorithms designed for vanilla CKKS can be modified to preserve IND-CPA-D security. We demonstrate an attack against the IND-CPA-D security of the PEGASUS construction [LHHMQ21] and we implement a proof-of-concept of this attack against the CKKS-to-FHEW switching mechanism in the OpenFHE library. Finally, we present a generic transformation that converts a vanilla CKKS-based switch into an IND-CPA-D-secure one.},
+  url = {https://eprint.iacr.org/2026/285},
+
+  selected          = {false},
+  abbr              = {ePrint},
+  preview           = {INDCPAD_ss.png},
+
+  bibtex_show       = {true},
+  html              = {https://eprint.iacr.org/2026/285},
+  pdf               = {https://eprint.iacr.org/2026/285.pdf},
+  code              = {https://github.com/drago-96/FHE_Switch},
+
+  google_scholar_id = {UeHWp8X0CEIC},
+}
+
+@InProceedings{10.1007/978-3-031-91124-8_13,
+  author="Hanzlik, Lucjan
+  and Paracucchi, Eugenio
+  and Zanotto, Riccardo",
+  editor="Fehr, Serge
+  and Fouque, Pierre-Alain",
+  title="Non-interactive Blind Signatures from RSA Assumption and More",
+  booktitle="Advances in Cryptology -- EUROCRYPT 2025",
+  year="2025",
+  publisher="Springer Nature Switzerland",
+  address="Cham",
+  pages="365--394",
+  abstract="Blind signatures have received increased attention from researchers and practitioners. They allow users to obtain a signature under a message without revealing it to the signer. One of the most popular applications of blind signatures is to use them as one-time tokens, where the issuing is not linkable to the redeeming phase, and the signature under a random identifier forms a valid token. This concept is the backbone of the Privacy Pass system, which uses it to identify honest but anonymous users and protect content delivery networks from botnets.",
+  isbn="978-3-031-91124-8",
+  doi="10.1007/978-3-031-91124-8_13",
+
+  selected          = {true},
+  abbr              = {EUROCRYPT},
+  preview           = {NIBS.png},
+
+  bibtex_show       = {true},
+  html              = {https://link.springer.com/chapter/10.1007/978-3-031-91124-8_13},
+  pdf               = {https://eprint.iacr.org/2025/2076.pdf},
+  slides            = {https://iacr.org/submit/files/slides/2025/eurocrypt/eurocrypt2025/133/133_slides.pdf},
+  video             = {https://youtu.be/0DoLLBDi0k4},
+
+  google_scholar_id = {qjMakFHDy7sC},
+}
+
+@InProceedings{10.1007/978-3-031-57725-3_12,
+  author="Branco, Pedro
+  and D{\"o}ttling, Nico
+  and Srinivasan, Akshayaram
+  and Zanotto, Riccardo",
+  editor="Tang, Qiang
+  and Teague, Vanessa",
+  title="Rate-1 Fully Local Somewhere Extractable Hashing from DDH",
+  booktitle="Public-Key Cryptography -- PKC 2024",
+  year="2024",
+  publisher="Springer Nature Switzerland",
+  address="Cham",
+  pages="356--386",
+  abstract="Somewhere statistically binding (SSB) hashing allows us to sample a special hashing key such that the digest statistically binds the input at m secret locations. This hash function is said to be somewhere extractable (SE) if there is an additional trapdoor that allows the extraction of the input bits at the m locations from the digest.",
+  isbn="978-3-031-57725-3",
+  doi="10.1007/978-3-031-57725-3_12",
+
+  selected          = {true},
+  abbr              = {PKC},
+  preview           = {PKC24.png},
+
+  bibtex_show       = {true},
+  html              = {https://link.springer.com/chapter/10.1007/978-3-031-57725-3_12},
+  pdf               = {https://eprint.iacr.org/2024/216.pdf},
+  slides            = {https://iacr.org/submit/files/slides/2024/pkc/pkc2024/168/slides.pdf},
+  video             = {https://youtu.be/e8KOVAwRlJY?si=2OipLFM9qXKvxX3Z},
+
+  google_scholar_id = {u-x6o8ySG0sC},
+}
+
+@article{10.62056/a39qgy4e-,
+  author={Emmanuela Orsini and Riccardo Zanotto},
+  title={Simple Two-Message {OT} in the Explicit Isogeny Model},
+  volume={1},
+  number={1},
+  year={2024},
+  date={2024-04-09},
+  issn={3006-5496},
+  doi={10.62056/a39qgy4e-},
+  journal={{IACR} Communications in Cryptology},
+  publisher={International Association for Cryptologic Research},
+  abstract={In this work we study algebraic and generic models for group actions, and extend them to the universal composability (UC) framework of Canetti (FOCS 2001). We revisit the constructions of Duman et al. (PKC 2023) integrating the type-safe model by Zhandry (Crypto 2022), adapted to the group action setting, and formally define an algebraic action model (AAM). This model restricts the power of the adversary in a similar fashion to the algebraic group model (AGM). By imposing algebraic behaviour to the adversary and environment of the UC framework, we construct the UC-AAM. Finally, we instantiate UC-AAM with isogeny-based assumptions, in particular the CSIDH action with twists, obtaining the explicit isogeny model, UC-EI; we observe that, under certain assumptions, this model is "closer" to standard UC than the UC-AGM, even though there still exists an important separation. We demonstrate the utility of our definitions by proving UC-EI security for the passive-secure oblivious transfer protocol described by Lai et al. (Eurocrypt 2021), hence providing the first concretely efficient two-message isogeny-based OT protocol in the random oracle model against malicious adversaries.},
+
+  selected          = {true},
+  abbr              = {CiC},
+  preview           = {OTEI.png},
+
+  bibtex_show       = {true},
+  html              = {https://cic.iacr.org/p/1/1/15},
+  pdf               = {https://cic.iacr.org/p/1/1/15/pdf},
+
+  google_scholar_id = {9yKSN-GCB0IC},
+}

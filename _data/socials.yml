@@ -1,3 +1,13 @@
-# Add social media links and usernames here.
-email:
-rss_icon: false
+email: riccardo.zanotto@cispa.de # your email address
+
+linkedin_username: riccardo-zanotto
+github_username: drago-96
+
+bluesky_url: https://bsky.app/profile/drago1729.bsky.social
+x_username: Drago1729
+
+# rss_icon: true # comment this line to hide the RSS icon
+
+orcid_id: 0009-0001-2086-8398
+dblp_url: https://dblp.org/pid/341/1727.html
+scholar_userid: nlK6FO0AAAAJ # your Google Scholar ID
