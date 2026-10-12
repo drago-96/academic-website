@@ -1,5 +1,49 @@
 ---
 ---
+@misc{cryptoeprint:2026/2277,
+      author = {Xiangyu Liu and Riccardo Zanotto and Vassilis Zikas},
+      title = {Non-Interactive Atomic Swaps from Standard Signatures: Lower Bounds and Constructions},
+      howpublished = {Cryptology {ePrint} Archive, Paper 2026/2277},
+      year = {2026},
+      abstract = {Atomic swaps are the prototypical application of adaptor signatures. Practical constructions settle with two ordinary on-chain signatures and require no scripting, but they need two sequential online rounds: Alice samples a hard statement and sends its pre-signature, and Bob follows with his own pre-signature using the same statement. We ask whether the protocol can be compressed into a single online round (from Bob to Alice), which we call a non-interactive atomic swap, without relying on impractical universal adaptor signatures. In particular, we require that both parties continue to use standard signature schemes with unmodified verification algorithms.
+      Our main result is a lower bound: for statistically unlinkable adaptors with negligible faithfulness failure, Bob's valid-signature space per message must be superpolynomially larger than the relation's witness space. This (1) reaffirms the impossibility result by Erwig et al. [PKC 2021] for unique signatures as a trivial corollary, and (2) excludes non-interactive swaps using the same signature scheme on both sides. However, the bound does leave room for asymmetric instantiations. We give one in which Alice signs with BLS and Bob uses a pairing-Schnorr adaptor whose witness is Alice's BLS signature, and prove its security under the native unforgeability of BLS in the random oracle model.
+      To support more signature schemes in our non-interactive swap framework, we introduce atomic signature swaps with preprocessing: Alice publishes message-independent public data before the messages are chosen. These data, together with her public key and the messages, later determine a statement whose witnesses assemble into her native signature. The protocol requires a single online round carrying a pre-signature by Bob and falls into our non-interactive framework. We prove a Schnorr/Schnorr instantiation under the OMDL assumption in the random oracle model, and give a conditional ECDSA/Schnorr instantiation.},
+      url = {https://eprint.iacr.org/2026/2277},
+
+      selected          = {false},
+      abbr              = {ePrint},
+      preview           = {NI-sigswap.png},
+
+      bibtex_show       = {true},
+      html              = {https://eprint.iacr.org/2026/2277},
+      pdf               = {https://eprint.iacr.org/2026/2277.pdf},
+
+      google_scholar_id = {Y0pCki6q_DkC},
+}
+
+
+@misc{cryptoeprint:2026/1889,
+      author = {Nico Döttling and Sri AravindaKrishnan Thyagarajan and Pratik Soni and Jay Taylor and Hendrik Waldner and Riccardo Zanotto},
+      title = {A General Approach to Adaptor Signatures},
+      howpublished = {Cryptology {ePrint} Archive, Paper 2026/1889},
+      year = {2026},
+      abstract = {Adaptor signatures have emerged as a powerful contract-minimal mechanism for fair exchange on blockchains, enabling efficient and privacy-preserving atomic swaps and conditional payments. However, existing adaptor schemes are limited to narrow classes of NP relations (e.g., discrete logarithm secrets) and specific signature schemes, limiting their scope both in terms of constructions and applications.
+      This work addresses this gap by presenting a new framework that supports arbitrary NP relations and a broad range of signature schemes, significantly extending the reach of adaptor signatures beyond prior works and broadening the design space for adaptor signature constructions. Our framework also yields adaptor signatures that are compatible with today's blockchain systems. More specifically, we devise two general compilers for adaptor signatures. First, we show how to efficiently lift adaptor signatures from structured languages (such as discrete log relations) to general NP languages with the help of degree- homomorphic encryption, resulting in adaptors for standard signature schemes and general NP languages. Secondly, we develop a compiler that transforms any signature scheme with a subliminal channel into an adaptor signature scheme for general NP languages using circuit-private fully homomorphic encryption. Signatures with subliminal channels enable the encoding of witnesses in the signing randomness, and include randomness-recoverable schemes like Schnorr, ECDSA, CL, BBS, as well as salted versions of deterministic signatures schemes like BLS and RSA. Both constructions achieve a novel property called statement truth privacy, which guarantees that a buyer learns nothing about the underlying statement, not even its truth, unless the protocol successfully completes.},
+      url = {https://eprint.iacr.org/2026/1889},
+
+      selected          = {false},
+      abbr              = {ePrint},
+      preview           = {general_adaptors_adv.png},
+
+      bibtex_show       = {true},
+      html              = {https://eprint.iacr.org/2026/1889},
+      pdf               = {https://eprint.iacr.org/2026/1889.pdf},
+      code              = {https://anonymous.4open.science/r/generic-adaptors-C4D6},
+
+      google_scholar_id = {Tyk-4Ss8FVUC},
+}
+
+
 @misc{cryptoeprint:2026/1067,
       author = {Nico Döttling and Manar Mohamed and Riccardo Zanotto},
       title = {{GATOR}: Group Action {AdapTOR} Signatures via {MPC}-in-the-Head},
@@ -12,7 +56,7 @@
       We further discuss concrete instantiations from several group-action families, including those underlying schemes such as CSI-FiSh, LESS, MEDS, and ALTEQ, and present a modular proof-of-concept implementation. We obtain a ~25kB pre-signature with ~100ms pre-signing time for LESS, MEDS and ALTEQ, while a ~4kB pre-signature with ~3.6s pre-signing time for CSI-FiSh.},
       url = {https://eprint.iacr.org/2026/1067},
 
-      selected          = {false},
+      selected          = {true},
       abbr              = {ePrint},
       preview           = {GATOR_cheat.png},
 
@@ -58,7 +102,7 @@
   publisher="Springer Nature Switzerland",
   address="Cham",
   pages="365--394",
-  abstract="Blind signatures have received increased attention from researchers and practitioners. They allow users to obtain a signature under a message without revealing it to the signer. One of the most popular applications of blind signatures is to use them as one-time tokens, where the issuing is not linkable to the redeeming phase, and the signature under a random identifier forms a valid token. This concept is the backbone of the Privacy Pass system, which uses it to identify honest but anonymous users and protect content delivery networks from botnets.",
+  abstract="Blind signatures have received increased attention from researchers and practitioners. They allow users to obtain a signature under a message without revealing it to the signer. One of the most popular applications of blind signatures is to use them as one-time tokens, where the issuing is not linkable to the redeeming phase, and the signature under a random identifier forms a valid token. This concept is the backbone of the Privacy Pass system, which uses it to identify honest but anonymous users and protect content delivery networks from botnets. Non-interactive blind signatures for random messages were introduced by Hanzlik (Eurocrypt'23). They allow a signer to create a pre-signature with respect to a particular public key, while the corresponding secret key can later be used to finalize the signature. This non-interaction allows for more applications than in the case of blind signatures. In particular, the author suggested using regular PKI keys as the recipient public key, allowing for a distribution of one-time tokens to users outside the system, e.g., to public keys of GitHub users, similar to airdropping of cryptocurrencies. Unfortunately, despite introducing this concept, the paper fails to provide schemes that work with keys used in the wild. We solve this open problem. We introduce a generic construction of non-interactive blind signatures that relies on Yao's garbled circuit techniques and provide particular improvements to this generic setting. We replace oblivious transfer with their non-interactive variant and show how to construct them so that the recipient's public key, encoding the OT choice, is a standard RSA public key (e, N). To improve the efficiency of the garbling, we show how to garble the signing algorithm of the pairing-based Pointcheval-Sanders (PS) signatures and the RSA-based signature scheme with efficient protocols by Camenisch and Lysyanskaya. Our technique also apply to the well-known BBS signatures. All our improvements are of independent interest and are central to our contribution.",
   isbn="978-3-031-91124-8",
   doi="10.1007/978-3-031-91124-8_13",
 
@@ -88,7 +132,7 @@
   publisher="Springer Nature Switzerland",
   address="Cham",
   pages="356--386",
-  abstract="Somewhere statistically binding (SSB) hashing allows us to sample a special hashing key such that the digest statistically binds the input at m secret locations. This hash function is said to be somewhere extractable (SE) if there is an additional trapdoor that allows the extraction of the input bits at the m locations from the digest.",
+  abstract="Somewhere statistically binding (SSB) hashing allows us to sample a special hashing key such that the digest statistically binds the input at m secret locations. This hash function is said to be somewhere extractable (SE) if there is an additional trapdoor that allows the extraction of the input bits at the m locations from the digest. Devadas, Goyal, Kalai, and Vaikuntanathan (FOCS 2022) introduced a variant of somewhere extractable hashing called rate-1 fully local SE hash functions. The rate-1 requirement states that the size of the digest is m + poly(λ) (where λ is the security parameter). The fully local property requires that for any index i, there is a “very short” opening showing that i-th bit of the hashed input is equal to b for some b ∈ \{0, 1\}. The size of this opening is required to be independent of m and in particular, this means that its size is independent of the size of the digest. Devadas et al. gave such a construction from Learning with Errors (LWE). In this work, we give a construction of a rate-1 fully local somewhere extractable hash function from Decisional Diffie-Hellman (DDH) and BARGs. Under the same assumptions, we give constructions of rate-1 BARG and RAM SNARG with partial input soundness whose proof sizes are only matched by prior constructions based on LWE.",
   isbn="978-3-031-57725-3",
   doi="10.1007/978-3-031-57725-3_12",
 

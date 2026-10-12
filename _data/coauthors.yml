@@ -28,3 +28,25 @@
 
 "mohamed":
   - firstname: ["Manar", "M."]
+
+"waldner":
+  - firstname: ["Hendrik", "H."]
+    url: https://hendrikwaldner.github.io/
+
+
+"thyagarajan":
+  - firstname: ["Sri AravindaKrishnan", "S."]
+    url: https://www.aravinda-thyagarajan.com/
+
+"soni":
+  - firstname: ["Pratik", "P."]
+    url: https://users.cs.utah.edu/~psoni/
+
+
+"liu":
+  - firstname: ["Xiangyu", "X."]
+    url: https://xiangyuliu-yahoo.github.io/
+
+"zikas":
+  - firstname: ["Vassilis", "V."]
+    url: https://faculty.cc.gatech.edu/~vzikas/
