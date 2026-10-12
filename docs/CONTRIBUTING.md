@@ -10,6 +10,13 @@ If you would like to implement a new feature or a bug, please make sure you (or 
 
 Note that since [#2048](https://github.com/alshedivat/al-folio/pull/2048) al-folio uses the [prettier formatter](https://prettier.io/) for its code, meaning all new submitted code must conform to its standard. If you don't have `prettier` installed for your setup and the `prettier` code check fails when submitting a PR, you can check the referred failed action in our repo. In that action there will be an artifact with an HTML diff showing the needed changes.
 
+To run the Prettier and style contract checks before each commit in this checkout, install the local hook after cloning:
+
+```bash
+npm ci
+git config core.hooksPath .githooks
+```
+
 ## Repository Routing (v1.x)
 
 `al-folio` is a starter in `v1.x`. Before opening a PR, route your change to the owning repo:
