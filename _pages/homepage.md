@@ -31,4 +31,4 @@ My research interests are broad, from isogenies and constructions of advanced pr
 Beyond research, I am a CTF player, and generally interested in how computer systems work and how they break.
 
 I am also really passionate about sports, hiking, mountains, photography, and many other things!
-You can read a longer bio on my [about page]({{ '/about/' | relative_url }}).
+You can read a longer bio on my [about page]({{ '/about/' | relative_url }}) or see my [talks, teaching, and other activities]({{ '/activities/' | relative_url }}).
