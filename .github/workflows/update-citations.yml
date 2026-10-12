@@ -7,6 +7,10 @@ on:
     # - cron: "0 0 * * 5" # Friday
   workflow_dispatch:
 
+permissions:
+  actions: write
+  contents: write
+
 jobs:
   update-citations:
     runs-on: ubuntu-latest
@@ -19,7 +23,7 @@ jobs:
       #          token: ${{ secrets.PAT }}
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.13"
 
@@ -35,10 +39,10 @@ jobs:
           echo "📦 Checking existing citations.yml hash..."
           if [ -f _data/citations.yml ]; then
             sha_before=$(sha256sum _data/citations.yml | awk '{print $1}')
-            echo "sha_before=$sha_before" >> $GITHUB_OUTPUT
+            echo "sha_before=$sha_before" >> "$GITHUB_OUTPUT"
             echo "📝 SHA before: $sha_before"
           else
-            echo "sha_before=none" >> $GITHUB_OUTPUT
+            echo "sha_before=none" >> "$GITHUB_OUTPUT"
             echo "📝 No existing citations.yml file found."
           fi
 
@@ -52,14 +56,14 @@ jobs:
           timeout 90 python bin/update_scholar_citations.py
           status=$?
           end_time=$(date)
-          if [ $status -eq 0 ]; then
+          if [ "$status" -eq 0 ]; then
             echo "✅ Citation update succeeded (started at $start_time, ended at $end_time)."
-            echo "✅ Citation update succeeded." >> $GITHUB_STEP_SUMMARY
+            echo "✅ Citation update succeeded." >> "$GITHUB_STEP_SUMMARY"
           else
             echo "❌ Citation update script failed with exit code $status (started at $start_time, ended at $end_time)."
-            echo "❌ Citation update script failed with exit code $status." >> $GITHUB_STEP_SUMMARY
+            echo "❌ Citation update script failed with exit code $status." >> "$GITHUB_STEP_SUMMARY"
+            exit "$status"
           fi
-          set -e
 
       - name: Save new citations.yml hash
         id: after
@@ -67,10 +71,10 @@ jobs:
           echo "🔍 Checking updated citations.yml hash..."
           if [ -f _data/citations.yml ]; then
             sha_after=$(sha256sum _data/citations.yml | awk '{print $1}')
-            echo "sha_after=$sha_after" >> $GITHUB_OUTPUT
+            echo "sha_after=$sha_after" >> "$GITHUB_OUTPUT"
             echo "📝 SHA after: $sha_after"
           else
-            echo "sha_after=none" >> $GITHUB_OUTPUT
+            echo "sha_after=none" >> "$GITHUB_OUTPUT"
             echo "📝 citations.yml was not created or is missing."
           fi
 
@@ -79,10 +83,10 @@ jobs:
           echo "📋 Comparing citation file hashes..."
           if [ "${{ steps.before.outputs.sha_before }}" != "${{ steps.after.outputs.sha_after }}" ]; then
             echo "✅ _data/citations.yml was updated."
-            echo "✅ _data/citations.yml was updated." >> $GITHUB_STEP_SUMMARY
+            echo "✅ _data/citations.yml was updated." >> "$GITHUB_STEP_SUMMARY"
           else
             echo "ℹ️ _data/citations.yml was not changed."
-            echo "ℹ️ _data/citations.yml was not changed." >> $GITHUB_STEP_SUMMARY
+            echo "ℹ️ _data/citations.yml was not changed." >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: Configure Git
@@ -92,10 +96,20 @@ jobs:
           echo "🔧 Git configured."
 
       - name: Commit and push if changed
+        id: commit
         run: |
           git add _data/citations.yml
-          git diff --staged --quiet || (
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
             echo "📤 Committing and pushing changes..."
             git commit -m "Update Google Scholar citations"
             git push
-          )
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy updated citations
+        if: steps.commit.outputs.changed == 'true' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
