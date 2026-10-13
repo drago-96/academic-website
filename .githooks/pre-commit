@@ -1,5 +1,92 @@
-#!/bin/sh
-set -eu
+#!/usr/bin/env node
 
-npm run lint:prettier
-npm run lint:style-contract
+const { spawnSync } = require("node:child_process");
+const fs = require("node:fs");
+const path = require("node:path");
+
+const rootResult = spawnSync("git", ["rev-parse", "--show-toplevel"], { encoding: "utf8" });
+if (rootResult.status !== 0) {
+  process.stderr.write(rootResult.stderr);
+  process.exit(1);
+}
+
+const root = rootResult.stdout.trim();
+const prettier = path.join(root, "node_modules", ".bin", "prettier");
+if (!fs.existsSync(prettier)) {
+  console.error("Prettier is not installed. Run `npm ci` before committing.");
+  process.exit(1);
+}
+
+const options = { cwd: root, encoding: "utf8", maxBuffer: 20 * 1024 * 1024 };
+const run = (command, args, extra = {}) => spawnSync(command, args, { ...options, ...extra });
+
+const different = run(prettier, [".", "--list-different"]);
+if (different.stderr) process.stderr.write(different.stderr);
+if (different.error || (different.status !== 0 && different.status !== 1)) {
+  console.error("Prettier could not check the repository.");
+  if (different.error) console.error(different.error.message);
+  process.exit(1);
+}
+
+const files = different.stdout.trim().split("\n").filter(Boolean);
+if (different.status === 1) {
+  if (files.length === 0) {
+    console.error("Prettier failed without reporting any files.");
+    process.exit(1);
+  }
+
+  console.error("Prettier found formatting issues. Applying fixes to the working tree:");
+  for (const file of files) {
+    console.error(`\n${file}`);
+    const result = run(prettier, ["--write", `./${file}`], { stdio: "inherit" });
+    if (result.status !== 0) process.exit(1);
+    run("git", ["--no-pager", "diff", "--", file], { stdio: "inherit" });
+  }
+
+  console.error("\nCommit stopped. Review the formatting changes, stage them with `git add`, then retry.");
+  process.exit(1);
+}
+
+// A formatted working tree can still contain an unformatted staged version.
+const staged = run("git", ["diff", "--cached", "--name-only", "--diff-filter=ACM", "-z"], { encoding: null });
+if (staged.status !== 0) {
+  process.stderr.write(staged.stderr);
+  process.exit(1);
+}
+
+const stale = [];
+for (const file of staged.stdout.toString("utf8").split("\0").filter(Boolean)) {
+  const info = run(prettier, ["--file-info", `./${file}`]);
+  if (info.status !== 0) {
+    process.stderr.write(info.stderr);
+    process.exit(1);
+  }
+  const { ignored, inferredParser } = JSON.parse(info.stdout);
+  if (ignored || !inferredParser) continue;
+
+  const blob = run("git", ["show", `:${file}`]);
+  if (blob.status !== 0) {
+    process.stderr.write(blob.stderr);
+    process.exit(1);
+  }
+  const check = run(prettier, ["--stdin-filepath", `./${file}`, "--check"], { input: blob.stdout });
+  if (check.status === 1) stale.push(file);
+  else if (check.status !== 0) {
+    process.stderr.write(check.stderr);
+    process.exit(1);
+  }
+}
+
+if (stale.length > 0) {
+  console.error("Prettier: these staged copies still need the formatted working-tree version:");
+  for (const file of stale) {
+    console.error(`\n${file}`);
+    run("git", ["--no-pager", "diff", "--", file], { stdio: "inherit" });
+  }
+  console.error("\nCommit stopped. Review these changes, stage them with `git add`, then retry.");
+  process.exit(1);
+}
+
+console.log("Prettier: working tree and staged files are formatted.");
+const style = run("npm", ["run", "lint:style-contract"], { stdio: "inherit" });
+process.exit(style.status ?? 1);

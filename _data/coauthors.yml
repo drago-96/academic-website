@@ -48,3 +48,19 @@
 "zikas":
   - firstname: ["Vassilis", "V."]
     url: https://faculty.cc.gatech.edu/~vzikas/
+
+"hetterich":
+  - firstname: ["Lorenz", "L."]
+    url: https://roots.ec/people/lorenz-hetterich/
+
+"cremers":
+  - firstname: ["Cas", "C."]
+    url: https://people.cispa.io/cas.cremers/
+
+"schwarz":
+  - firstname: ["Michael", "M."]
+    url: https://misc0110.net/
+
+"gerlach":
+  - firstname: ["Lukas", "L."]
+    url: https://lukasgerlach.me/

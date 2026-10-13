@@ -17,6 +17,8 @@ npm ci
 git config core.hooksPath .githooks
 ```
 
+If Prettier finds formatting issues, the hook formats the affected files in your working tree, prints their diffs, and stops the commit. Review the changes, stage the files you want to commit with `git add`, then retry. The hook does not stage formatting changes for you.
+
 ## Repository Routing (v1.x)
 
 `al-folio` is a starter in `v1.x`. Before opening a PR, route your change to the owning repo:
