@@ -1,8 +1,8 @@
 metadata:
-  last_updated: '2026-10-12'
+  last_updated: '2026-11-02'
 papers:
   nlK6FO0AAAAJ:9yKSN-GCB0IC:
-    citations: 11
+    citations: 12
     title: Simple Two-Message OT in the Explicit Isogeny Model
     year: '2024'
   nlK6FO0AAAAJ:IjCSPb-OGe4C:
@@ -16,6 +16,10 @@ papers:
   nlK6FO0AAAAJ:UeHWp8X0CEIC:
     citations: 0
     title: 'How (not) to Switch FHE Schemes: Framework and Attacks in the IND-CPA-D Model'
+    year: '2026'
+  nlK6FO0AAAAJ:W7OEmFMy1HYC:
+    citations: 0
+    title: 'Reverse-Bleichenbacher: Bleichenbacher Attacks are Practical Again'
     year: '2026'
   nlK6FO0AAAAJ:Y0pCki6q_DkC:
     citations: 0
