@@ -53,7 +53,7 @@ jobs:
           set +e
           echo "🚀 Running citation update script (single attempt)..."
           start_time=$(date)
-          timeout 300 python -u bin/update_scholar_citations.py
+          timeout --kill-after=10s 300 python -u bin/update_scholar_citations.py
           status=$?
           end_time=$(date)
           if [ "$status" -eq 0 ]; then
@@ -62,6 +62,10 @@ jobs:
           else
             echo "❌ Citation update script failed with exit code $status (started at $start_time, ended at $end_time)."
             echo "❌ Citation update script failed with exit code $status." >> "$GITHUB_STEP_SUMMARY"
+            if [ "$status" -eq 124 ]; then
+              echo "::error::Scholar fetch exceeded 300 seconds. See the request logs and Python stack traces above for the stalled request or retry."
+              echo "⏱️ Scholar fetch timed out after 300 seconds. Check the request logs and Python stack traces for HTTP errors, CAPTCHA handling, or retry waits." >> "$GITHUB_STEP_SUMMARY"
+            fi
             exit "$status"
           fi
 

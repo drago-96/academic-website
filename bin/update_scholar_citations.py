@@ -1,10 +1,18 @@
 #!/usr/bin/env python
 
+import faulthandler
+import logging
 import os
 import sys
-import yaml
+import time
 from datetime import datetime
+from importlib.metadata import version
+
+import yaml
 from scholarly import scholarly
+
+
+LOGGER = logging.getLogger("citations")
 
 
 def load_scholar_user_id() -> str:
@@ -42,6 +50,7 @@ def get_scholar_citations() -> None:
     today = datetime.now().strftime("%Y-%m-%d")
 
     # Check if the output file was already updated today
+    existing_data = None
     if os.path.exists(OUTPUT_FILE):
         try:
             with open(OUTPUT_FILE, "r") as f:
@@ -64,14 +73,30 @@ def get_scholar_citations() -> None:
 
     scholarly.set_timeout(15)
     scholarly.set_retries(3)
+    # Scholar's 403/CAPTCHA handling can sleep outside its HTTP timeout and retry
+    # counter. Dump the active stack periodically before the workflow kills us.
+    LOGGER.info("A Python stack trace will be printed every 60s while waiting for Scholar")
+    faulthandler.dump_traceback_later(60, repeat=True)
+    started = time.monotonic()
+    stage = "loading the author profile"
     try:
+        LOGGER.info("Loading the author profile for %s", SCHOLAR_USER_ID)
         author = scholarly.search_author_id(SCHOLAR_USER_ID)
-        author_data = scholarly.fill(author)
-    except Exception as e:
-        print(
-            f"Error fetching author data from Google Scholar for user ID '{SCHOLAR_USER_ID}': {e}. Please check your internet connection and Scholar user ID."
+        LOGGER.info("Author profile loaded in %.1fs", time.monotonic() - started)
+        stage = "loading publications"
+        LOGGER.info("Loading publications and citation counts")
+        # Other profile sections make extra requests that this job does not need.
+        author_data = scholarly.fill(author, sections=["publications"])
+        LOGGER.info("Scholar fetch completed in %.1fs", time.monotonic() - started)
+    except Exception:
+        LOGGER.exception(
+            "Failed while %s for Google Scholar ID %s. Existing citations were not changed.",
+            stage,
+            SCHOLAR_USER_ID,
         )
         sys.exit(1)
+    finally:
+        faulthandler.cancel_dump_traceback_later()
 
     if not author_data:
         print(
@@ -125,8 +150,20 @@ def get_scholar_citations() -> None:
 
 
 if __name__ == "__main__":
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+        stream=sys.stdout,
+    )
+    scholarly.set_logger(True)
+    LOGGER.info(
+        "Python %s; scholarly %s; httpx %s",
+        sys.version.split()[0],
+        version("scholarly"),
+        version("httpx"),
+    )
     try:
         get_scholar_citations()
-    except Exception as e:
-        print(f"Unexpected error: {e}")
+    except Exception:
+        LOGGER.exception("Unexpected error updating citations")
         sys.exit(1)
