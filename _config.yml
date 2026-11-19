@@ -8,10 +8,10 @@ middle_name:
 last_name: Zanotto
 contact_note:
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Homepage of Riccardo Zanotto, cryptography researcher. Here you can find my blog, research, projects and more.
+  Homepage of Riccardo Zanotto, cryptography researcher. Here you can find my research, publications, talks, and blog.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website, zanotto, drago, cryptography, cryptanalysis # add your own keywords or leave empty
+keywords: zanotto, drago, cryptography, cryptanalysis # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: dragon_head_cropped_favicon.ico # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -238,6 +238,10 @@ exclude:
   - package-lock.json
   - purgecss.config.js
   - README.md
+  - AGENTS.md
+  - CLAUDE.md
+  - requirements.txt
+  - test/
   - readme_preview/
   - gems/
   - migrations/

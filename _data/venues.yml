@@ -13,3 +13,7 @@
 "CiC":
   url: https://cic.iacr.org/
   color: "#0F766E"
+
+"NDSS":
+  url: https://www.ndss-symposium.org/
+  color: "#B91C1C"
