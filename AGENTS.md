@@ -16,11 +16,11 @@ Source of the personal website [zanot.to](https://zanot.to), built with Jekyll o
 ```bash
 docker compose up -d                 # local preview at http://localhost:8080
 npm ci && npm run lint:prettier      # formatting check, also run in CI
-npm run lint:style-contract          # checks the repo stays a thin starter (bin/style_contract.js)
+npm run lint:style-contract          # checks the repo stays a thin starter (bin/style_contract.js), also run in CI
 bundle exec al-folio upgrade audit   # v1 config check, also run in CI (upgrade-check.yml)
 ```
 
-- The pre-commit hook (`.githooks/pre-commit`, enabled with `git config core.hooksPath .githooks`) runs Prettier and the style contract.
+- The pre-commit hook (`.githooks/pre-commit`, enabled with `git config core.hooksPath .githooks`) runs Prettier only; the style contract runs in `prettier.yml` on every push.
 
 - Docker builds into the container (`/tmp/_site`), not into the repo's `_site/`, and restarts Jekyll when `_config.yml` changes.
 - Pushing to `main` deploys to GitHub Pages via `.github/workflows/deploy.yml`.

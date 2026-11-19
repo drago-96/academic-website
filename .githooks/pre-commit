@@ -88,5 +88,3 @@ if (stale.length > 0) {
 }
 
 console.log("Prettier: working tree and staged files are formatted.");
-const style = run("npm", ["run", "lint:style-contract"], { stdio: "inherit" });
-process.exit(style.status ?? 1);
