@@ -27,8 +27,9 @@ latest_posts:
 
 Hi, I'm Riccardo, and I am currently pursuing a PhD in cryptography at [CISPA](https://cispa.de/en) and [Saarland University](https://www.graduateschool-computerscience.de/), supervised by [Nico Döttling](https://sites.google.com/site/nicodoettling/).
 
-My research interests are broad, from isogenies and constructions of advanced primitives to cryptanalysis of assumptions and real-world protocols.
-Beyond research, I am a CTF player, and generally interested in how computer systems work and how they break.
+My research interests range from isogeny-based cryptography and advanced primitives, such as FHE and adaptor signatures, to the cryptanalysis of real-world protocols. What interests me most is the interplay between theory and practice: how mathematical security guarantees translate to real-world systems, and what happens when they don't.
 
-I am also really passionate about sports, hiking, mountains, photography, and many other things!
-You can read a longer bio on my [about page]({{ '/about/' | relative_url }}) or see my [talks, teaching, and other activities]({{ '/activities/' | relative_url }}).
+I'm also active in the CTF community, both as a player and a challenge author, and generally enjoy understanding how computers and systems work (and how to break them!).
+
+When I'm away from my computer, I love sports, hiking in the mountains, traveling, and photography.
+You can read more about me on my [About page]({{ '/about/' | relative_url }}), or explore my [talks, teaching, and other activities]({{ '/activities/' | relative_url }}).

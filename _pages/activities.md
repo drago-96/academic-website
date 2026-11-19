@@ -41,9 +41,9 @@ I have been a subreviewer for PKC 2027; Eurocrypt 2026; CT-RSA, TCC, ACISP, and 
 
 ## Community and outreach
 
-I wrote CTF challenges for:
-
-- [ECSC 2024](https://github.com/ECSC2024/ECSC2024-CTF-Jeopardy).
-- [ICC 2022](https://github.com/CybersecNatLab/ICC2022-AD-CTF).
-- [OliCyber](https://training.olicyber.it/) (2021–2023).
-- [m0leCon](https://m0lecon.it/) (2021–2023).
+- **CINI – Cybersecurity National Lab.** Taught cryptography and cryptanalysis courses for CyberChallenge.IT and OliCyber, and designed CTF challenges for:
+  - [ECSC 2024](https://github.com/ECSC2024/ECSC2024-CTF-Jeopardy) · [interview](https://youtu.be/M1gLTtbePpI)
+  - [ICC 2022](https://github.com/CybersecNatLab/ICC2022-AD-CTF)
+  - [OliCyber](https://training.olicyber.it/) (2021–2023)
+- **[m0leCon](https://m0lecon.it/).** Co-organizer and challenge author for the cybersecurity conference and CTF in Turin.
+- **Italian Mathematical Olympiad.** Training high school students, selecting problems, and organizing competitions since 2015.
