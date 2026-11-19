@@ -78,12 +78,6 @@ for (const forbiddenGlobPath of [
   }
 }
 
-for (const requiredPath of ["test/visual", "test/integration_plugin_toggles.sh", "test/integration_distill.sh"]) {
-  if (!exists(requiredPath)) {
-    failures.push(`Starter integration/visual contract missing required path: \`${requiredPath}\`.`);
-  }
-}
-
 if (failures.length > 0) {
   console.error("Starter style contract check failed:");
   failures.forEach((message) => console.error(`- ${message}`));

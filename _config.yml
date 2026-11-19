@@ -241,7 +241,6 @@ exclude:
   - AGENTS.md
   - CLAUDE.md
   - requirements.txt
-  - test/
   - readme_preview/
   - gems/
   - migrations/
