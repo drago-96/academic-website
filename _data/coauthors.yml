@@ -41,6 +41,9 @@
   - firstname: ["Pratik", "P."]
     url: https://users.cs.utah.edu/~psoni/
 
+"taylor":
+  - firstname: ["Jay", "J."]
+
 "liu":
   - firstname: ["Xiangyu", "X."]
     url: https://xiangyuliu-yahoo.github.io/
@@ -48,6 +51,9 @@
 "zikas":
   - firstname: ["Vassilis", "V."]
     url: https://faculty.cc.gatech.edu/~vzikas/
+
+"lu":
+  - firstname: ["Youheng", "Y."]
 
 "hetterich":
   - firstname: ["Lorenz", "L."]

@@ -240,6 +240,7 @@ exclude:
   - README.md
   - AGENTS.md
   - CLAUDE.md
+  - STATUS.md
   - requirements.txt
   - readme_preview/
   - gems/
