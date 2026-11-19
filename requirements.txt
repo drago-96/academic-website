@@ -1,5 +1,0 @@
-nbconvert
-pyyaml
-rendercv[full]
-scholarly
-bibtexparser>=1.4.4,<2
